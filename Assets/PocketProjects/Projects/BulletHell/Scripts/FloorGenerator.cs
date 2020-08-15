@@ -7,7 +7,11 @@ namespace PocketProjects.BulletHell
     public class FloorGenerator : MonoBehaviour
     {
         [Header("Attributes")]
-        [SerializeField] private Vector2Int floorSize = new Vector2Int();
+        [SerializeField] private Vector2Int baseSize = new Vector2Int();
+        // [SerializeField] private Vector2Int floorSize = new Vector2Int();
+
+        [Header("References")]
+        [SerializeField] private RuleTile floorTile = null;
 
         private Tilemap tilemap;
 
@@ -20,7 +24,16 @@ namespace PocketProjects.BulletHell
 
         private void GenerateFloor()
         {
-            Debug.Log(floorSize);
+            // Generate base
+            for (int x = -baseSize.x / 2; x < baseSize.x / 2; x++)
+            {
+                for (int y = -baseSize.y / 2; y < baseSize.y / 2; y++)
+                {
+                    Vector3Int position = new Vector3Int(x, y, 0);
+
+                    tilemap.SetTile(position, floorTile);
+                }
+            }
         }
     }
 }
