@@ -2,11 +2,19 @@
 
 namespace PocketProjects.BulletHell
 {
+    [RequireComponent(typeof(Rigidbody2D))]
     public class Player : MonoBehaviour
     {
         [Header("Attributes")]
-        [SerializeField] private float movementSpeed;
+        [SerializeField] private float moveSpeed = 0;
+
+        private Rigidbody2D rb;
         
+        private void Start()
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
         private void Update()
         {
             Move();
@@ -14,12 +22,19 @@ namespace PocketProjects.BulletHell
 
         private void Move()
         {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
+            rb.velocity = MoveDirection() * moveSpeed;
+        }
 
-            Vector2 direction = new Vector2(horizontal, vertical);
+        private Vector2 MoveDirection()
+        {
+            Vector2 direction = Vector2.zero;
 
-            transform.position = transform.position + (Vector3)direction;
+            direction.x = Input.GetAxis("Horizontal");
+            direction.y = Input.GetAxis("Vertical");
+            
+            direction = direction.normalized;
+
+            return direction;
         }
     }
 }
