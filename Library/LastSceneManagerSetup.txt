@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/PocketProjects/Projects/BulletHell/Scenes/BulletHellGame.unity
+- path: Assets/PocketProjects/BulletHell/Scenes/BulletHellGame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
