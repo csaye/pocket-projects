@@ -13,7 +13,7 @@ namespace PocketProjects.BulletHell
 
         private void Update()
         {
-            transform.position = transform.position + ((Vector3)movementDirection * movementSpeed);
+            transform.position = transform.position + ((Vector3)movementDirection * movementSpeed * Time.deltaTime);
         }
 
         public void ActivateBullet()
@@ -52,7 +52,7 @@ namespace PocketProjects.BulletHell
 
         private float GetRandomSpeed()
         {
-            return Random.Range(0.1f, 0.15f);
+            return Random.Range(5.0f, 10.0f);
         }
 
         private void DeactivateBullet()

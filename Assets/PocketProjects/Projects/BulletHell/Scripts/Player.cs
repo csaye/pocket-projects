@@ -10,10 +10,12 @@ namespace PocketProjects.BulletHell
         [SerializeField] private float moveSpeed = 0;
 
         private Rigidbody2D rb;
+        private Animator animator;
         
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -32,6 +34,9 @@ namespace PocketProjects.BulletHell
 
             direction.x = Input.GetAxis("Horizontal");
             direction.y = Input.GetAxis("Vertical");
+
+            animator.SetFloat("Horizontal", direction.x);
+            animator.SetFloat("Vertical", direction.y);
             
             direction = direction.normalized;
 

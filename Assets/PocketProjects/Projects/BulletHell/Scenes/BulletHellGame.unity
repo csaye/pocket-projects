@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 374303382}
   - component: {fileID: 374303384}
   - component: {fileID: 374303386}
+  - component: {fileID: 374303387}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -534,6 +535,25 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!95 &374303387
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374303381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25e81bc7f6c1d4c26a02326c716364fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa990311e1da3460b9a9706587f1a2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPoolSize: 24
+  bulletPoolSize: 16
   bulletSpawnTime: 0.3
   bulletPrefabs:
   - {fileID: 9091517364407715344, guid: 3d9a2bd21768441a8a1283c09b5f7e29, type: 3}
