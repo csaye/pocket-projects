@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/PocketProjects/Projects/BulletHell/Scenes/BulletHellMainMenu.unity
+    guid: d400c12a96d6848ac8011ada8c8675b2
+  - enabled: 1
+    path: Assets/PocketProjects/Projects/BulletHell/Scenes/BulletHellGame.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/PocketProjects/Projects/BulletHell/Scenes/BulletHellGameOver.unity
+    guid: 350abc13c0504497799fd11df6c7caa5
   m_configObjects: {}
