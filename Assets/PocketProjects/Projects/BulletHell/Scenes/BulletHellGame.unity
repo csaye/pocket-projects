@@ -130,9 +130,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 370891335}
+  - component: {fileID: 370891338}
   - component: {fileID: 370891337}
   - component: {fileID: 370891336}
-  - component: {fileID: 370891338}
   - component: {fileID: 370891341}
   - component: {fileID: 370891340}
   - component: {fileID: 370891339}
@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316696945f8ff4f7f81858b5ad084039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floorSize: {x: 24, y: 12}
   baseSize: {x: 4, y: 4}
   floorTile: {fileID: 11400000, guid: 1d4452a901fbc46ada1e9df783ff432e, type: 2}
 --- !u!66 &370891339
@@ -564,7 +565,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.45
+  m_Radius: 0.4
 --- !u!114 &374303385
 MonoBehaviour:
   m_ObjectHideFlags: 0
