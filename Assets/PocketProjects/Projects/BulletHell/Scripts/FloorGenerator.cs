@@ -41,16 +41,15 @@ namespace PocketProjects.BulletHell
         {
             List<Vector3Int> tilePositions = new List<Vector3Int>();
 
+            // Generate base
+            // foreach (Vector3Int position in baseBounds.allPositionsWithin)
+            // {
+            //     tilePositions.Add(position);
+            // }
+
             // Generate floor
             foreach (Vector3Int position in floorBounds.allPositionsWithin)
             {
-                // If part of base
-                if (baseBounds.Contains(position))
-                {
-                    tilePositions.Add(position);
-                    continue;
-                }
-
                 float weight = GetWeight(position);
 
                 if (Random.value < weight)
@@ -59,19 +58,58 @@ namespace PocketProjects.BulletHell
                 }
             }
 
+            TrimTiles(tilePositions);
             CreateTiles(tilePositions);
         }
 
         // Get tile generation weight based on position
         private float GetWeight(Vector3Int position)
         {
-            int xCloseness = floorSize.x / 2 - Mathf.Abs(position.x);
-            int yCloseness = floorSize.y / 2 - Mathf.Abs(position.y);
+            float xCloseness = (floorSize.x / 2) - Mathf.Abs(position.x);
+            float yCloseness = (floorSize.y / 2) - Mathf.Abs(position.y);
 
-            float xWeight = xCloseness / (float)floorSize.x;
-            float yWeight = yCloseness / (float)floorSize.y;
+            float xWeight = xCloseness / (floorSize.x / 2);
+            float yWeight = yCloseness / (floorSize.y / 2);
 
             return (xWeight + yWeight) / 2;
+        }
+
+        private void TrimTiles(List<Vector3Int> tilePositions)
+        {
+            bool removeTile = false;
+            bool createTile = false;
+
+            Vector3Int changePosition = new Vector3Int();
+
+            foreach (Vector3Int position in tilePositions)
+            {
+                // If position bordered by four empty spaces
+                if (!tilePositions.Contains(position + Vector3Int.up)
+                && !tilePositions.Contains(position + Vector3Int.left)
+                && !tilePositions.Contains(position + Vector3Int.right)
+                && !tilePositions.Contains(position + Vector3Int.down))
+                {
+                    changePosition = position;
+                    removeTile = true;
+                    break;
+                }
+            }
+
+            // If necessary, change tilemap and re-trim
+
+            if (removeTile)
+            {
+                tilemap.SetTile(changePosition, null);
+                tilePositions.Remove(changePosition);
+                TrimTiles(tilePositions);
+            }
+
+            if (createTile)
+            {
+                tilemap.SetTile(changePosition, floorTile);
+                tilePositions.Add(changePosition);
+                TrimTiles(tilePositions);
+            }
         }
 
         private void CreateTiles(List<Vector3Int> tilePositions)
