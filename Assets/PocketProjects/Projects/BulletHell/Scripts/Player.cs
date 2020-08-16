@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PocketProjects.BulletHell
 {
@@ -35,6 +36,20 @@ namespace PocketProjects.BulletHell
             direction = direction.normalized;
 
             return direction;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collider)
+        {
+            // If collided with bullet
+            if (collider.gameObject.GetComponent<Bullet>() != null)
+            {
+                GameOver();
+            }
+        }
+
+        private void GameOver()
+        {
+            SceneManager.LoadScene("BulletHellGameOver");
         }
     }
 }

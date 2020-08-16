@@ -11,12 +11,14 @@ namespace PocketProjects.BulletHell
         [Header("References")]
         [SerializeField] private GameObject[] bulletPrefabs = new GameObject[6];
 
-        private GameObject[] bullets = new GameObject[16];
+        private GameObject[] bullets;
 
         private float lastSpawnTime;
 
         private void Start()
         {
+            bullets = new GameObject[bulletPoolSize];
+
             InstantiateBullets();
         }
 
@@ -55,7 +57,7 @@ namespace PocketProjects.BulletHell
                 }
             }
 
-            Debug.LogError("Bullet call exceeds pool capacity.");
+            Debug.LogError("Bullet spawn call exceeds pool capacity.");
         }
 
         private void InitializeBullet(int index)
