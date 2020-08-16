@@ -26,14 +26,14 @@ namespace PocketProjects.BulletHell
         {
             for (int i = 0; i < bulletPoolSize; i++)
             {
-                bullets[i] = Instantiate(RandomBullet(), Vector2.zero, Quaternion.identity, transform);
+                bullets[i] = Instantiate(GetBulletType(i), Vector2.zero, Quaternion.identity, transform);
                 bullets[i].SetActive(false);
             }
         }
 
-        private GameObject RandomBullet()
+        private GameObject GetBulletType(int i)
         {
-            return bulletPrefabs[Random.Range(0, bulletPrefabs.Length)];
+            return bulletPrefabs[i % bulletPrefabs.Length];
         }
 
         private void Update()
