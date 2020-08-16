@@ -305,6 +305,8 @@ MonoBehaviour:
   floorSize: {x: 24, y: 12}
   baseSize: {x: 4, y: 4}
   floorTile: {fileID: 11400000, guid: 1d4452a901fbc46ada1e9df783ff432e, type: 2}
+  textBox: {fileID: 1491346595358620682, guid: 6a5eb7db16f80413fa202eec76fa12be, type: 3}
+  canvasTransform: {fileID: 372291154}
 --- !u!66 &370891339
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -441,8 +443,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -484702965
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &372291154
@@ -804,6 +806,7 @@ GameObject:
   - component: {fileID: 1354445017}
   - component: {fileID: 1354445019}
   - component: {fileID: 1354445018}
+  - component: {fileID: 1354445020}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -867,3 +870,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354445016}
   m_CullTransparentMesh: 0
+--- !u!210 &1354445020
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354445016}
+  m_Enabled: 1
+  m_SortingLayerID: -484702965
+  m_SortingLayer: -1
+  m_SortingOrder: 0

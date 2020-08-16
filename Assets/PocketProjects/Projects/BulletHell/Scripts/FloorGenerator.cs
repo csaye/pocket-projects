@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -49,9 +50,28 @@ namespace PocketProjects.BulletHell
                     tilePositions.Add(position);
                     continue;
                 }
+
+                float weight = GetWeight(position);
+
+                if (Random.value < weight)
+                {
+                    tilePositions.Add(position);
+                }
             }
 
             CreateTiles(tilePositions);
+        }
+
+        // Get tile generation weight based on position
+        private float GetWeight(Vector3Int position)
+        {
+            int xCloseness = floorSize.x / 2 - Mathf.Abs(position.x);
+            int yCloseness = floorSize.y / 2 - Mathf.Abs(position.y);
+
+            float xWeight = xCloseness / (float)floorSize.x;
+            float yWeight = yCloseness / (float)floorSize.y;
+
+            return (xWeight + yWeight) / 2;
         }
 
         private void CreateTiles(List<Vector3Int> tilePositions)
