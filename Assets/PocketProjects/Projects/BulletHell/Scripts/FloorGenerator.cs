@@ -11,6 +11,7 @@ namespace PocketProjects.BulletHell
         [Header("Attributes")]
         [SerializeField] private Vector2Int floorSize = new Vector2Int();
         [SerializeField] private Vector2Int baseSize = new Vector2Int();
+        [SerializeField] private List<Vector2Int> neighborPositions = new List<Vector2Int>();
 
         [Header("References")]
         [SerializeField] private RuleTile floorTile = null;
@@ -42,10 +43,10 @@ namespace PocketProjects.BulletHell
             List<Vector3Int> tilePositions = new List<Vector3Int>();
 
             // Generate base
-            // foreach (Vector3Int position in baseBounds.allPositionsWithin)
-            // {
-            //     tilePositions.Add(position);
-            // }
+            foreach (Vector3Int position in baseBounds.allPositionsWithin)
+            {
+                tilePositions.Add(position);
+            }
 
             // Generate floor
             foreach (Vector3Int position in floorBounds.allPositionsWithin)
@@ -81,17 +82,31 @@ namespace PocketProjects.BulletHell
 
             Vector3Int changePosition = new Vector3Int();
 
-            foreach (Vector3Int position in tilePositions)
+            foreach (Vector3Int position in floorBounds.allPositionsWithin)
             {
-                // If position bordered by four empty spaces
-                if (!tilePositions.Contains(position + Vector3Int.up)
-                && !tilePositions.Contains(position + Vector3Int.left)
-                && !tilePositions.Contains(position + Vector3Int.right)
-                && !tilePositions.Contains(position + Vector3Int.down))
+                int neighborTiles = GetNeighborTiles(position, tilePositions);
+
+                // If position in tile positions
+                if (tilePositions.Contains(position))
                 {
-                    changePosition = position;
-                    removeTile = true;
-                    break;
+                    // If position bordered by one or less tiles, remove tile
+                    if (neighborTiles <= 1)
+                    {
+                        changePosition = position;
+                        removeTile = true;
+                        break;
+                    }
+                }
+                // If position empty
+                else
+                {
+                    // If position bordered by four tiles, create tile
+                    if (neighborTiles >= 4)
+                    {
+                        changePosition = position;
+                        createTile = true;
+                        break;
+                    }
                 }
             }
 
@@ -110,6 +125,19 @@ namespace PocketProjects.BulletHell
                 tilePositions.Add(changePosition);
                 TrimTiles(tilePositions);
             }
+        }
+
+        // Returns number of tiles meeting neighbor specifications for position
+        private int GetNeighborTiles(Vector3Int position, List<Vector3Int> tilePositions)
+        {
+            int neighborTiles = 0;
+
+            foreach (Vector2Int neighborPosition in neighborPositions)
+            {
+                if (tilePositions.Contains(position + (Vector3Int)neighborPosition)) neighborTiles++;
+            }
+
+            return neighborTiles;
         }
 
         private void CreateTiles(List<Vector3Int> tilePositions)

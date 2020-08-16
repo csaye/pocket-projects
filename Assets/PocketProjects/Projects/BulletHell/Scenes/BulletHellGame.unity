@@ -304,9 +304,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorSize: {x: 24, y: 12}
   baseSize: {x: 4, y: 4}
+  neighborPositions:
+  - {x: 1, y: 0}
+  - {x: 0, y: 1}
+  - {x: -1, y: 0}
+  - {x: 0, y: -1}
   floorTile: {fileID: 11400000, guid: 1d4452a901fbc46ada1e9df783ff432e, type: 2}
-  textBox: {fileID: 1491346595358620682, guid: 6a5eb7db16f80413fa202eec76fa12be, type: 3}
-  canvasTransform: {fileID: 372291154}
 --- !u!66 &370891339
 CompositeCollider2D:
   m_ObjectHideFlags: 0
