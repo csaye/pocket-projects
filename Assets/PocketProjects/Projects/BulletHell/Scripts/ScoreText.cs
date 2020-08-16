@@ -20,7 +20,7 @@ namespace PocketProjects.BulletHell
             int score = PlayerPrefs.GetInt("BulletHellScore", 0);
             int highScore = PlayerPrefs.GetInt("BulletHellHighScore", 0);
 
-            textField.text = $"Score: {score}\nHigh Score: {highScore}"
+            textField.text = $"Score: {score}\nHigh Score: {highScore}";
         }
     }
 }

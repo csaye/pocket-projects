@@ -24,6 +24,7 @@ namespace PocketProjects.BulletHell
         {
             if (Time.time - lastScoreTime > scoreSpeed)
             {
+                lastScoreTime = Time.time;
                 IncrementScore();
             }
         }
@@ -34,9 +35,10 @@ namespace PocketProjects.BulletHell
 
             PlayerPrefs.SetInt("BulletHellScore", score);
 
+            // Set new high score if necessary
             if (score > PlayerPrefs.GetInt("BulletHellHighScore", 0))
             {
-                PlayerPrefs.
+                PlayerPrefs.SetInt("BulletHellHighScore", score);
             }
 
             UpdateTextField();
