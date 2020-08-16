@@ -11,10 +11,18 @@ namespace PocketProjects.BulletHell
         [Header("Attributes")]
         [SerializeField] private Vector2Int floorSize = new Vector2Int();
         [SerializeField] private Vector2Int baseSize = new Vector2Int();
-        [SerializeField] private List<Vector2Int> neighborPositions = new List<Vector2Int>();
+        [SerializeField] private float floorDensity = 0;
 
         [Header("References")]
         [SerializeField] private RuleTile floorTile = null;
+
+        private List<Vector2Int> neighborPositions = new List<Vector2Int>
+        {
+            Vector2Int.up,
+            Vector2Int.left,
+            Vector2Int.right,
+            Vector2Int.down
+        };
 
         private Tilemap tilemap;
 
@@ -53,7 +61,7 @@ namespace PocketProjects.BulletHell
             {
                 float weight = GetWeight(position);
 
-                if (Random.value < weight)
+                if (Random.value < weight * floorDensity)
                 {
                     tilePositions.Add(position);
                 }
@@ -96,12 +104,24 @@ namespace PocketProjects.BulletHell
                         removeTile = true;
                         break;
                     }
+
+                    // If position bordered by two horizontal or vertical tiles, remove tile
+                    if (neighborTiles == 2)
+                    {
+                        if ((tilePositions.Contains(position + Vector3Int.left) && tilePositions.Contains(position + Vector3Int.right))
+                        || (tilePositions.Contains(position + Vector3Int.up) && tilePositions.Contains(position + Vector3Int.down)))
+                        {
+                            changePosition = position;
+                            removeTile = true;
+                            break;
+                        }
+                    }
                 }
                 // If position empty
                 else
                 {
-                    // If position bordered by four tiles, create tile
-                    if (neighborTiles >= 4)
+                    // If position bordered by three or more tiles, create tile
+                    if (neighborTiles >= 3)
                     {
                         changePosition = position;
                         createTile = true;
@@ -111,14 +131,12 @@ namespace PocketProjects.BulletHell
             }
 
             // If necessary, change tilemap and re-trim
-
             if (removeTile)
             {
                 tilemap.SetTile(changePosition, null);
                 tilePositions.Remove(changePosition);
                 TrimTiles(tilePositions);
             }
-
             if (createTile)
             {
                 tilemap.SetTile(changePosition, floorTile);
