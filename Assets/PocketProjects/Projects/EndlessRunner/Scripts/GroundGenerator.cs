@@ -46,7 +46,7 @@ namespace PocketProjects.EndlessRunner
             int minX = Mathf.FloorToInt(minExtent.x);
             int maxX = Mathf.CeilToInt(maxExtent.x);
 
-            for (int x = minX; x < maxX; x++)
+            for (int x = minX; x < maxX + 3; x++)
             {
                 GenerateSlice(x);
             }
@@ -54,11 +54,21 @@ namespace PocketProjects.EndlessRunner
 
         private void Update()
         {
+            CheckGround();
+        }
+
+        private void CheckGround()
+        {
             Vector2 minExtent = mainCamera.ScreenToWorldPoint(minScreenPoint);
-            Vector2 maxExtent = mainCamera.ScreenToWorldPoint(maxScreenPoint);
 
             int minX = Mathf.FloorToInt(minExtent.x);
-            int maxX = Mathf.CeilToInt(maxExtent.x);
+
+            // If screen scrolled past furthest slice
+            if (groundSlices[0] < minX - 1)
+            {
+                RemoveSlice(groundSlices[0]);
+                GenerateSlice(groundSlices[groundSlices.Count - 1] + 1);
+            }
         }
 
         private void GenerateSlice(int x)
@@ -78,6 +88,16 @@ namespace PocketProjects.EndlessRunner
         private void RemoveSlice(int x)
         {
             groundSlices.Remove(x);
+
+            Vector3Int pos = new Vector3Int(x, lowerY, 0);
+
+            // Remove all tiles in slice
+            while (groundTilemap.GetTile(pos) != null)
+            {
+                Debug.Log("removing " + pos);
+                groundTilemap.SetTile(pos, null);
+                pos += Vector3Int.up;
+            }
         }
 
         private void GenerateTile(Vector2Int pos)

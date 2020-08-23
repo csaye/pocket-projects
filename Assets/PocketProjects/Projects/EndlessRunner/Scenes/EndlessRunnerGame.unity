@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd34b595ea2344ff9a52fec4b47bfdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowerY: -6
+  lowerY: -2
   groundRoughness: 0.15
   groundHeight: 5
   mainCamera: {fileID: 1179430798}

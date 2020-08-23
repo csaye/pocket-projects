@@ -1,13 +1,36 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{9F08718A-5A6C-685E-486D-4E9BFEA6C117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras", "Unity.2D.Tilemap.Extras.csproj", "{BDCDF109-B18B-708C-AA16-EEB281440496}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Editor", "Unity.2D.Tilemap.Extras.Editor.csproj", "{B33C5BB2-2D13-14F7-1BF1-DDEDEB729D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Placeholder.EditorTests", "Unity.2D.Tilemap.Extras.Placeholder.EditorTests.csproj", "{1724676C-11CF-A561-69D0-B2AAFDA83556}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{9F08718A-5A6C-685E-486D-4E9BFEA6C117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F08718A-5A6C-685E-486D-4E9BFEA6C117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F08718A-5A6C-685E-486D-4E9BFEA6C117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F08718A-5A6C-685E-486D-4E9BFEA6C117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDCDF109-B18B-708C-AA16-EEB281440496}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDCDF109-B18B-708C-AA16-EEB281440496}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDCDF109-B18B-708C-AA16-EEB281440496}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDCDF109-B18B-708C-AA16-EEB281440496}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33C5BB2-2D13-14F7-1BF1-DDEDEB729D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33C5BB2-2D13-14F7-1BF1-DDEDEB729D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33C5BB2-2D13-14F7-1BF1-DDEDEB729D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33C5BB2-2D13-14F7-1BF1-DDEDEB729D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1724676C-11CF-A561-69D0-B2AAFDA83556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1724676C-11CF-A561-69D0-B2AAFDA83556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1724676C-11CF-A561-69D0-B2AAFDA83556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1724676C-11CF-A561-69D0-B2AAFDA83556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
