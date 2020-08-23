@@ -42,6 +42,8 @@
      <Compile Include="Assets\PocketProjects\Projects\BulletHell\Scripts\Player.cs" />
      <Compile Include="Assets\PocketProjects\Projects\BulletHell\Scripts\Score.cs" />
      <Compile Include="Assets\PocketProjects\Projects\BulletHell\Scripts\ScoreText.cs" />
+     <Compile Include="Assets\PocketProjects\Projects\EndlessRunner\Scripts\GroundGenerator.cs" />
+     <Compile Include="Assets\PocketProjects\Projects\EndlessRunner\Scripts\SidescrollCamera.cs" />
      <Compile Include="Assets\PocketProjects\Scripts\MenuButton.cs" />
      <None Include="Assets\Tools\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\Tools\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

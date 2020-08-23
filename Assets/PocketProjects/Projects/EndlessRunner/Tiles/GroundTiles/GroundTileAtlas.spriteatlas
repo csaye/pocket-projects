@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GroundTileAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 849634c6716a04eb585c2a44177a0171, type: 3}
+    totalSpriteSurfaceArea: 832
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 7714861430389134398, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 1399064803029251860, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 7415153120446582508, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: -6652277832207214932, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 8685005563216762181, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 6988028765074096110, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 6983431751080370506, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 4930281995492453304, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 1230877979070368599, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 8371019140385695755, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 2925954814019165330, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: 4649709173367252304, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  - {fileID: -6272188282642272357, guid: a206dc601fe724240a8e0e1a6bb01697, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - GroundTiles_12
+  - GroundTiles_11
+  - GroundTiles_10
+  - GroundTiles_8
+  - GroundTiles_9
+  - GroundTiles_4
+  - GroundTiles_5
+  - GroundTiles_6
+  - GroundTiles_7
+  - GroundTiles_0
+  - GroundTiles_1
+  - GroundTiles_2
+  - GroundTiles_3
+  m_Tag: GroundTileAtlas
+  m_IsVariant: 0

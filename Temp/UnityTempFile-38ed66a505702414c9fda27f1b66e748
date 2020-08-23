@@ -315,4 +315,6 @@
 "Assets/PocketProjects/Projects/BulletHell/Scripts/Player.cs"
 "Assets/PocketProjects/Projects/BulletHell/Scripts/Score.cs"
 "Assets/PocketProjects/Projects/BulletHell/Scripts/ScoreText.cs"
+"Assets/PocketProjects/Projects/EndlessRunner/Scripts/GroundGenerator.cs"
+"Assets/PocketProjects/Projects/EndlessRunner/Scripts/SidescrollCamera.cs"
 "Assets/PocketProjects/Scripts/MenuButton.cs"
