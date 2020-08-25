@@ -76,7 +76,6 @@ namespace PocketProjects.EndlessRunner
             groundSlices.Add(x);
 
             float upperYFloat = Mathf.PerlinNoise((x + seed) * groundRoughness, seed * groundRoughness) * groundHeight;
-            Debug.Log(x + ": " + upperYFloat);
             int upperY = Mathf.CeilToInt(upperYFloat);
 
             for (int y = lowerY; y < upperY; y++)
@@ -94,7 +93,6 @@ namespace PocketProjects.EndlessRunner
             // Remove all tiles in slice
             while (groundTilemap.GetTile(pos) != null)
             {
-                Debug.Log("removing " + pos);
                 groundTilemap.SetTile(pos, null);
                 pos += Vector3Int.up;
             }
