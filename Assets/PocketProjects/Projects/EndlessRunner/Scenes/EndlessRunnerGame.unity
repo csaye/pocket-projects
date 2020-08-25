@@ -360,6 +360,9 @@ GameObject:
   - component: {fileID: 531108453}
   - component: {fileID: 531108455}
   - component: {fileID: 531108454}
+  - component: {fileID: 531108458}
+  - component: {fileID: 531108457}
+  - component: {fileID: 531108456}
   m_Layer: 0
   m_Name: GroundTilemap
   m_TagString: Untagged
@@ -512,6 +515,67 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!66 &531108456
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531108452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 531108458}
+    m_ColliderPaths: []
+  m_CompositePaths:
+    m_Paths: []
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &531108457
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531108452}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &531108458
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531108452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &932433599
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b446779bcdc364097a5088907d59869d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0
+  scrollSpeed: 2
 --- !u!1 &1277635043
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,9 +858,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &1277635046
 CircleCollider2D:
@@ -876,6 +940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afbc5a6f11a740c9a7335219e50a536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveForce: 300
+  jumpForce: 300
 --- !u!1 &1570240158
 GameObject:
   m_ObjectHideFlags: 0
