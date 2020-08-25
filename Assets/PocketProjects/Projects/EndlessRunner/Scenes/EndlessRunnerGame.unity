@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 932433600}
   - component: {fileID: 932433602}
   - component: {fileID: 932433601}
+  - component: {fileID: 932433603}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -710,6 +711,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932433599}
   m_CullTransparentMesh: 0
+--- !u!114 &932433603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932433599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d188fbad9f3a24d9a9a17b5450d075ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreSpeed: 0.75
+  scorePlayerPref: EndlessRunnerScore
+  highScorePlayerPref: EndlessRunnerHighScore
 --- !u!1 &1179430796
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +822,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b446779bcdc364097a5088907d59869d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
+  scrollSpeedMin: 1
+  scrollSpeedMax: 8
+  speedIncreaseRate: 0.1
+  scrollSpeed: 0
 --- !u!1 &1277635043
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +875,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -877,7 +896,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45
 --- !u!212 &1277635047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -940,8 +959,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afbc5a6f11a740c9a7335219e50a536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveForce: 300
-  jumpForce: 300
+  moveForce: 250
+  jumpForce: 500
 --- !u!1 &1570240158
 GameObject:
   m_ObjectHideFlags: 0

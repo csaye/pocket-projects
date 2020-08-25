@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PocketProjects.EndlessRunner
 {
@@ -46,6 +47,16 @@ namespace PocketProjects.EndlessRunner
         private bool Grounded()
         {
             return Mathf.Abs(rb.velocity.y) < 0.01f;
+        }
+
+        private void OnBecameInvisible()
+        {
+            GameOver();
+        }
+
+        private void GameOver()
+        {
+            SceneManager.LoadScene("EndlessRunnerGameOver");
         }
     }
 }
