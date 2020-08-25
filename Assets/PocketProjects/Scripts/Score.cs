@@ -20,6 +20,8 @@ namespace PocketProjects
         private void Start()
         {
             textField = GetComponent<TextMeshProUGUI>();
+            
+            lastScoreTime = Time.time;
         }
 
         private void Update()

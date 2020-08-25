@@ -1112,10 +1112,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485885910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b73b9f7f171f840c8ad746b3fa0f2622, type: 3}
+  m_Script: {fileID: 11500000, guid: d188fbad9f3a24d9a9a17b5450d075ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreSpeed: 0.7
+  scoreSpeed: 0.75
+  scorePlayerPref: BulletHellScore
+  highScorePlayerPref: BulletHellHighScore
 --- !u!1 &2078628060
 GameObject:
   m_ObjectHideFlags: 0

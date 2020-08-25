@@ -25,5 +25,5 @@ EditorBuildSettings:
     guid: e15654fdb33084459ac18ad5af76d0ca
   - enabled: 1
     path: Assets/PocketProjects/Projects/EndlessRunner/Scenes/EndlessRunnerGameOver.unity
-    guid: a1b77b9549bfc4b73bf8a1c8c0ca032e
+    guid: fe490c641968e433dad99e5763ccc25b
   m_configObjects: {}
